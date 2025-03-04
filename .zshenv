@@ -1,0 +1,1 @@
+/gnu/store/r10rs4al7mbvlq7652lg4qhcpir8zkxz-zshenv-auxiliary
