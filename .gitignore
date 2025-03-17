@@ -7,3 +7,6 @@
 !.librewolf/nc7ukzxo.default
 !.librewolf/nc7ukzxo.default/chrome
 !.librewolf/nc7ukzxo.default/chrome/*
+!.config
+!.config/conky
+!.config/conky/conky.conf
