@@ -1,0 +1,19 @@
+So steam expects an exported share
+but it also expects explicitly steamapps to be at the root of that dir
+
+you can not pass /games/SteamLibrary
+you must instead create a symlink and then place that symlink at the root
+
+
+
+
+Add your user to the input group
+
+
+
+Steam NEEDS gdm
+No idea what is in there but without it Steam will refuse to forward virtual input to the virtual device it creates in /dev/
+Basically no input will function in the game for Steam Input.
+
+
+If most games (but not all) are giving a black screen on opening them try changing the Steam Proton Runtime (Like from Hotfix to Experimental)
