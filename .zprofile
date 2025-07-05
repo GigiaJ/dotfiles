@@ -2,4 +2,3 @@
 source /etc/profile
 # Set up the home environment profile.
 source ~/.profile
-export GUIX_SANDBOX_EXTRA_SHARES="/games"
