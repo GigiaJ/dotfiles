@@ -16,5 +16,8 @@
     "asvetliakov.vscode-neovim": 1
   },
   "diffEditor.codeLens": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "sshfs.configpaths": [
+    "/home/jaggar/.ssh/config.json"
+  ],
 }
