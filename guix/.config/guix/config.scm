@@ -30,7 +30,7 @@
   (host-name "Catdog7")
 
   (kernel-loadable-modules (list v4l2loopback-linux-module))
-
+(initrd-modules '("applespi" "bcm5974"))
   (swap-devices
    (list
 	   (swap-space (target (uuid "cd232ce0-e15a-4df9-a6e0-0ac23f42eae8")))))
@@ -51,7 +51,6 @@
 
 (services
  (cons*
-  (service mysql-service-type)
   (service containerd-service-type)
   (service docker-service-type)
   (service openssh-service-type)

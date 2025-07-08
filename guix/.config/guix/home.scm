@@ -23,6 +23,8 @@
     "git"             ;; A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     "strace"          ;; A diagnostic, debugging, and instructional userspace utility for Linux to monitor system calls and signals.
     "runc"            ;; A CLI tool for spawning and running containers according to the OCI specification.
+    "cmake"
+    "make"
   )))
   
 (define %program-packages
@@ -54,6 +56,8 @@
   "pkg-config"              ;; A helper tool used when compiling applications and libraries to retrieve information about installed libraries.
   "util-linux"              ;; A standard package of essential Linux command-line utilities.
   "btrfs-progs"             ;; A set of userspace utilities for managing Btrfs filesystems.
+  "tinyxml2"
+  "gtkmm"
    ))))
 
 (define %lib-packages
@@ -74,7 +78,9 @@
   "libdbusmenu-qt"          ;; A Qt implementation for libdbusmenu, allowing Qt applications to create D-Bus menus.
   "procps"                  ;; A set of command-line and full-screen utilities that provide information out of the /proc filesystem, including `ps`, `top`, and `kill`.
   "libnotify"               ;; A library for sending desktop notifications to a notification daemon.
+  "libuv"
 ))))
+
 
 (define %general-packages
   (append
@@ -97,6 +103,7 @@
   "gtk"                     ;; The GIMP Toolkit, a multi-platform toolkit for creating graphical user interfaces.
   "gdk-pixbuf"              ;; A toolkit for image loading and pixel buffer manipulation, often used with GTK.
   "bluez"                   ;; The official Linux Bluetooth protocol stack; it provides the core Bluetooth functionality.
+  "axel"
    ))))
 
 (define %desktop-packages
@@ -105,6 +112,7 @@
   '(
   "hicolor-icon-theme"      ;; A fallback icon theme that provides a standard directory structure for icon themes.
   "gnome-themes-extra"      ;; Provides extra themes for the GNOME desktop, including the popular Adwaita-dark.
+  "bash"
   "zsh"                     ;; An extended Bourne shell (sh) with many improvements, including more powerful interactive features.
   "network-manager-openvpn" ;; A plugin for NetworkManager to support OpenVPN connections.
   "waybar"                  ;; Provides a highly customizable Wayland bar for Sway and other wlroots-based compositors.
@@ -134,6 +142,16 @@
   "font-google-noto-sans-cjk" ;; Sans-serif variant of Noto for CJK scripts.
   "font-google-noto-emoji"  ;; The emoji font from the Noto family, providing full-color emoji support.
   "font-nerd-fonts"         ;; A collection of patched fonts with icons (Devicons, Font Awesome, etc.) for use in terminals and status bars.
+  "rofi"
+  "yad"
+  "playerctl"
+  "wlogout"
+  "jq"
+  "wallust"
+  "swww"
+  "hyprpaper"
+  "cava"
+  "openssl"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
