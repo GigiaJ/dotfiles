@@ -152,6 +152,9 @@
   "hyprpaper"
   "cava"
   "openssl"
+
+  ;;
+  jupyter
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
@@ -272,4 +275,9 @@ shepherd services.")
     ;; In this particular case, GUIX_SANDBOX_EXTRA_SHARES is needed for Steam to recognize
     ;; external drives correctly as it is a sandboxed application.
     (simple-service 'extra-environment-variables home-environment-variables-service-type
-                    `(("GUIX_SANDBOX_EXTRA_SHARES" . "/games"))))))
+     `(
+      ("GUIX_SANDBOX_EXTRA_SHARES" . "/games")
+      ("PATH" . "$HOME/.local/bin:$PATH")
+      ("NODE_PATH" . "$HOME/.local/lib/node_modules:$NODE_PATH")
+      ("npm_config_prefix" . "$HOME/.local")
+    )))))
