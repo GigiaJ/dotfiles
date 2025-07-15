@@ -152,9 +152,11 @@
   "hyprpaper"
   "cava"
   "openssl"
-
   ;;
-  jupyter
+  "jupyter"
+  "python-jupytext"
+  "python-jupyter-console"
+  "cloudflared"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
