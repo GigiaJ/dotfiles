@@ -28,7 +28,7 @@
     (locale "en_US.utf8")
   (timezone "America/Chicago")
   (keyboard-layout (keyboard-layout "us"))
-  (host-name "Guix_Mac")
+  (host-name "GuixMac")
 
   (kernel-loadable-modules (list v4l2loopback-linux-module))
   (initrd-modules (append '("applespi" "bcm5974") %base-initrd-modules))
