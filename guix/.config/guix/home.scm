@@ -157,6 +157,10 @@
   "python-jupytext"
   "python-jupyter-console"
   "cloudflared"
+  ;;
+  glibc-locales
+  ;;
+  ark
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
