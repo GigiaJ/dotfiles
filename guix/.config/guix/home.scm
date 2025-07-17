@@ -25,6 +25,7 @@
     "runc"            ;; A CLI tool for spawning and running containers according to the OCI specification.
     "cmake"
     "make"
+    "python"
   )))
   
 (define %program-packages
@@ -166,6 +167,7 @@
   "breeze-icons"
   "qt6ct"
   "qt5ct"
+  ;;
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
