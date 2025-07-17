@@ -165,6 +165,7 @@
   ;;
   "breeze-icons"
   "qt6ct"
+  "qt5ct"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
