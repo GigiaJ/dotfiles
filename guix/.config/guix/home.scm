@@ -158,10 +158,10 @@
   "python-jupyter-console"
   "cloudflared"
   ;;
-  glibc-locales
+  "glibc-locales"
   ;;
-  ark
-  mousepad
+  "ark"
+  "mousepad"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
