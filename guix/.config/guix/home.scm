@@ -162,6 +162,9 @@
   ;;
   "ark"
   "mousepad"
+  ;;
+  breeze-icons
+  qt6ct
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
