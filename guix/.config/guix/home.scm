@@ -161,6 +161,7 @@
   glibc-locales
   ;;
   ark
+  mousepad
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
