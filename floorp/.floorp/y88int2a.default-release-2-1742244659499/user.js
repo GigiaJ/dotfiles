@@ -547,3 +547,8 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 Sets the user interface
 **/
 user_pref("floorp.browser.user.interface", 7);
+
+/**
+Removes the floor side panel
+**/
+user_pref("floorp.panelSidebar.enabled", false);
