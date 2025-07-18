@@ -11,7 +11,7 @@
 ;;; Service definitions
 (use-modules
  ((gnu services docker) #:select (containerd-service-type docker-service-type))
- ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type %desktop-services))
+ ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type gnome-keyring-service-type %desktop-services))
  ((gnu services pm) #:select (power-profiles-daemon-service-type))
  ((gnu services xorg) #:select (gdm-service-type))
  ((gnu services ssh) #:select (openssh-service-type))
