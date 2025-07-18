@@ -6,6 +6,7 @@
              (gnu home services desktop)
              (gnu packages)
              (gnu services)
+             (gnu services desktop)
              (gnu system)
              (gnu system shadow)
              (nongnu packages)
