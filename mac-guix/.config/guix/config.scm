@@ -67,6 +67,7 @@
           (list
           (pam-limits-entry "*" 'soft 'nofile 65536)
           (pam-limits-entry "*" 'hard 'nofile 262144)))
+  (service gnome-keyring-service-type)
   ;; Modify the default desktop services to add OpenVPN support
   ;; directly into NetworkManager.
   ;; Otherwise we can't use our VPN config files.
