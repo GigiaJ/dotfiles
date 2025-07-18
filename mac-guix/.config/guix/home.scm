@@ -291,7 +291,9 @@ shepherd services.")
              `(("gdb/gdbinit" ,%default-gdbinit)
                ("nano/nanorc" ,%default-nanorc)))
 
-    (service gnome-keyring-service-type)
+(service home-gnome-keyring-service-type
+             (home-gnome-keyring-configuration
+               (components '(pam secrets ssh))))
 
     ;; Extends the sandbox for Guix commands to include an additional directory,
     ;; useful for accessing files outside the standard home paths.
