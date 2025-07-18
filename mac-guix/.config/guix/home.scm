@@ -173,6 +173,8 @@
   "power-profiles-daemon"
   "papirus-icon-theme"
   "adwaita-icon-theme"
+
+  "gnome-keyring"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
@@ -287,6 +289,8 @@ shepherd services.")
     (service home-xdg-configuration-files-service-type
              `(("gdb/gdbinit" ,%default-gdbinit)
                ("nano/nanorc" ,%default-nanorc)))
+
+    (service gnome-keyring-service-type)
 
     ;; Extends the sandbox for Guix commands to include an additional directory,
     ;; useful for accessing files outside the standard home paths.
