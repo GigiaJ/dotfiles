@@ -4,7 +4,7 @@
 ;;; Package definitions
 (use-modules
  ((gnu packages shells) #:select (zsh))
- ((gnu packages gnome) #:select (network-manager-openvpn))
+ ((gnu packages gnome) #:select (network-manager-openvpn power-profiles-daemon-service-type))
  ((gnu packages linux) #:select (v4l2loopback-linux-module))
  ((gnu packages games) #:select (steam-devices-udev-rules)))
 
@@ -56,6 +56,7 @@
   (service docker-service-type)
   (service openssh-service-type)
   (service bluetooth-service-type)
+  (service power-profiles-daemon-service-type)
   ;; Add udev rules for Steam controllers and other hardware.
   (udev-rules-service 'steam-devices steam-devices-udev-rules)
   ;; Raise the open file descriptor limits. This prevents errors in applications
