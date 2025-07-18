@@ -4,7 +4,7 @@
 ;;; Package definitions
 (use-modules
  ((gnu packages shells) #:select (zsh))
- ((gnu packages gnome) #:select (network-manager-openvpn power-profiles-daemon-service-type))
+ ((gnu packages gnome) #:select (network-manager-openvpn))
  ((gnu packages linux) #:select (v4l2loopback-linux-module))
  ((gnu packages games) #:select (steam-devices-udev-rules)))
 
@@ -12,6 +12,7 @@
 (use-modules
  ((gnu services docker) #:select (containerd-service-type docker-service-type))
  ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type %desktop-services))
+ ((gnu services pm) #:select (power-profiles-daemon-service-type))
  ((gnu services xorg) #:select (gdm-service-type))
  ((gnu services ssh) #:select (openssh-service-type))
  ((gnu services networking) #:select (network-manager-service-type network-manager-configuration)))
