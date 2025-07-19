@@ -29,6 +29,6 @@ for file in "${polkit[@]}"; do
 done
 
 # Fallback message if nothing executed
-if [ "$executed" == false ]; then
+if [ "$executed" = false ]; then
   echo "No valid Polkit agent found. Please install one."
 fi
