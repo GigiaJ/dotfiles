@@ -47,11 +47,13 @@
 "modules-right": [
 	"tray",
 	"network#speed",
+	"bluetooth",
 	"custom/separator#dot-line",
 	"group/mobo_drawer",
-	"custom/separator#line",  
+	"custom/separator#line",
 	"group/audio",
-	"custom/separator#dot-line", 
+	"custom/separator#dot-line",
 	"group/status",
+	"battery",
 	],
 }
