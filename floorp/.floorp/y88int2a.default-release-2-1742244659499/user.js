@@ -552,3 +552,9 @@ user_pref("floorp.browser.user.interface", 7);
 Removes the floor side panel
 **/
 user_pref("floorp.panelSidebar.enabled", false);
+
+user_pref("sidebar.verticalTabs", true);
+
+user_pref("browser.tabs.hoverPreview.enabled", true);
+
+user_pref("sidebar.expandOnHover", true);
