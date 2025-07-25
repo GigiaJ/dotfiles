@@ -173,6 +173,9 @@
   "python-requests"
   "power-profiles-daemon"
   "papirus-icon-theme"
+  "adwaita-icon-theme"
+
+  "gnome-keyring"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
