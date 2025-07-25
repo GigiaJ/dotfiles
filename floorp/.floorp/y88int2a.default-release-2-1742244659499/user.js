@@ -558,3 +558,5 @@ user_pref("sidebar.verticalTabs", true);
 user_pref("browser.tabs.hoverPreview.enabled", true);
 
 user_pref("sidebar.expandOnHover", true);
+
+user_pref("browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine", "DuckDuckGo");
