@@ -46,6 +46,7 @@
     "openscad"                ;; A software for creating solid 3D CAD objects.
     "conky"                   ;; A free, light-weight system monitor for X, that displays any kind of information on your desktop.
     "code-server"             ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
+    "nextcloud-client"
   )))
 
 (define %utility-packages
