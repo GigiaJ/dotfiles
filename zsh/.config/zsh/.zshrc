@@ -59,3 +59,5 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent
 fi
+
+GITSTATUS_LOG_LEVEL=DEBUG
