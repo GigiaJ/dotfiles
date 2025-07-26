@@ -12,14 +12,14 @@
   (host-name "GuixMac")
 
   (initrd-modules (append '("applespi" "bcm5974") %base-initrd-modules))
-  (swap-devices
-   (list
-	   (swap-space (target (uuid "cd232ce0-e15a-4df9-a6e0-0ac23f42eae8")))))
   (bootloader (bootloader-configuration
                 (bootloader grub-efi-bootloader)
                 (targets (list "/boot/efi"))
                   (keyboard-layout (keyboard-layout "us"))))
-
+  (swap-devices
+   (list (swap-device
+          (target "/swapfile")
+          (size (* 16 1024 1024 1024)))))
   (file-systems (cons* (file-system
                          (mount-point "/")
                          (device (uuid
