@@ -1,7 +1,7 @@
 ;;; Core GNU modules and system definitions
 (use-modules (gnu)
              (gnu system)      ; For G (gigabytes)
-             (guix services))  ; For swap-file-service-type
+             (gnu services))  ; For swap-file-service-type
 
 ;;; Third-party and non-free modules
 (use-modules
@@ -12,7 +12,9 @@
   (inherit (base-operating-system))
   (kernel linux-kernel-mbp-t2)
   (host-name "GuixMac")
-
+  (swap-devices
+   (list
+	   (swap-space (target (uuid "8cf21ad7-dc47-43ab-a2c6-5b429d20ccaf")))))
   (initrd-modules (append '("applespi" "bcm5974") %base-initrd-modules))
   (bootloader (bootloader-configuration
                 (bootloader grub-efi-bootloader)
@@ -30,12 +32,5 @@
                                        'fat32))
                          (type "vfat")) %base-file-systems))
 
-  ;; Add a service to create and manage a swap file.
-  (services (cons* (service swap-file-service-type
-                            (swap-file-configuration
-                              ;; The path where the swap file will be created.
-                              (target "/swapfile")
-
-                              ;; The desired size. Adjust as needed.
-                              (size (* 16 G))))
-                   %base-services)))
+                  
+                  )
