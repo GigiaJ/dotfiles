@@ -1,5 +1,7 @@
 ;;; Core GNU modules and system definitions
-(use-modules (gnu))
+(use-modules (gnu)
+             (gnu system)      ; For G (gigabytes)
+             (guix services))  ; For swap-file-service-type
 
 ;;; Third-party and non-free modules
 (use-modules
@@ -16,10 +18,6 @@
                 (bootloader grub-efi-bootloader)
                 (targets (list "/boot/efi"))
                   (keyboard-layout (keyboard-layout "us"))))
-  (swap-devices
-   (list (swap-device
-          (target "/swapfile")
-          (size (* 16 1024 1024 1024)))))
   (file-systems (cons* (file-system
                          (mount-point "/")
                          (device (uuid
@@ -30,4 +28,14 @@
                          (mount-point "/boot/efi")
                          (device (uuid "5F66-17ED"
                                        'fat32))
-                         (type "vfat")) %base-file-systems)))
+                         (type "vfat")) %base-file-systems))
+
+  ;; Add a service to create and manage a swap file.
+  (services (cons* (service swap-file-service-type
+                            (swap-file-configuration
+                              ;; The path where the swap file will be created.
+                              (target "/swapfile")
+
+                              ;; The desired size. Adjust as needed.
+                              (size (* 16 G))))
+                   %base-services)))
