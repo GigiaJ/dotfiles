@@ -26,7 +26,6 @@
     "cmake"
     "make"
     "python"
-    "zsh"
   )))
   
 (define %program-packages

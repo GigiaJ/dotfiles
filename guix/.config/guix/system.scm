@@ -8,5 +8,5 @@
 (use-modules (base-system))
 ;; The rest of your logic remains the same.
 (if (apple-hardware?)
-    (load "macbook-config.scm")
+    (load "macbook-system.scm")
     (load "desktop-system.scm"))
