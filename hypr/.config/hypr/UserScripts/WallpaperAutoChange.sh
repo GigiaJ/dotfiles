@@ -33,7 +33,7 @@ while true; do
 	| while read -r img; do
     		focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
     		hyprctl hyprpaper reload $focused_monitor,"$img"
-    		$wallust_refresh
+            wallust run "$img" -s &
     		sleep "$INTERVAL"
 	done
 done
