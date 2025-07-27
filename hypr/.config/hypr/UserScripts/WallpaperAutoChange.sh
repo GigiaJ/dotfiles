@@ -25,7 +25,7 @@ export SWWW_TRANSITION_TYPE=simple
 INTERVAL=10
 
 while true; do
-    find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) ! -iname "*.gif" \
+    find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) ! -iname "*.gif" ! -iname "*.webp" \
         | while read -r img; do
             echo "$((RANDOM % 1000)):$img"
         done \
