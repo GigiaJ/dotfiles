@@ -4,6 +4,7 @@
 
 # List of potential Polkit agent file paths
 polkit=(
+  # Need to package Polkit for hyprland
   "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
   "/usr/libexec/hyprpolkitagent"
   "/usr/lib/hyprpolkitagent"
