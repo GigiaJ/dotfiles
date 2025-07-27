@@ -25,15 +25,16 @@ export SWWW_TRANSITION_TYPE=simple
 INTERVAL=10
 
 while true; do
-	find "$1" \
-		| while read -r img; do
-			echo "$((RANDOM % 1000)):$img"
-		done \
-		| sort -n | cut -d':' -f2- \
-		| while read -r img; do
-			hyperctl hyprpaper reload $focused_monitor "$img" 
-			$wallust_refresh
-			sleep $INTERVAL
-			
-		done
+    find "$1" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) ! -iname "*.gif" \
+        | while read -r img; do
+            echo "$((RANDOM % 1000)):$img"
+        done \
+        | sort -n | cut -d':' -f2- \
+	| while read -r img; do
+    		focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
+    		hyprctl hyprpaper reload $focused_monitor,"$img"
+    		$wallust_refresh
+    		sleep "$INTERVAL"
+	done
 done
+
