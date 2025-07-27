@@ -32,8 +32,9 @@ while true; do
         | sort -n | cut -d':' -f2- \
 	| while read -r img; do
     		focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
-    		hyprctl hyprpaper reload $focused_monitor,"$img"
-            wallust run "$img" -s &
+                hyprctl hyprpaper preload "$img"
+    			hyprctl hyprpaper wallpaper $focused_monitor,"$img"
+                setsid wallust run "$img" -s > /dev/null 2>&1 
     		sleep "$INTERVAL"
 	done
 done
