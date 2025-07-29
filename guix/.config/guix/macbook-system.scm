@@ -1,15 +1,19 @@
 ;;; Core GNU modules and system definitions
 (use-modules (gnu)
-             (gnu system)      ; For G (gigabytes)
-             (gnu services))  ; For swap-file-service-type
+             (gnu system)
+             (gnu services)
+            ) 
 
 ;;; Third-party and non-free modules
 (use-modules
- (gchannel packages mac-compat-kernel)
+  (gchannel packages mac-compat-kernel)
+  (nongnu packages linux)
+  (t2-wifi-firmware)
 )
 
 (operating-system
   (inherit (base-operating-system))
+  (firmware (list t2-wifi-firmware linux-firmware))
   (kernel linux-kernel-mbp-t2)
   (host-name "GuixMac")
   (swap-devices
@@ -30,7 +34,5 @@
                          (mount-point "/boot/efi")
                          (device (uuid "5F66-17ED"
                                        'fat32))
-                         (type "vfat")) %base-file-systems))
-
-                  
+                         (type "vfat")) %base-file-systems))                  
                   )
