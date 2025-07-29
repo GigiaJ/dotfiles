@@ -3,7 +3,7 @@
 ;;; NOTE: These files are not committed to this repository due to licensing.
 ;;; To rebuild this configuration on a new machine, the following files
 ;;; must be extracted from MacOS and placed in
-;;; /home/your-user/.config/t2-wifi-firmware/lib/firmware/brcm/
+;;; /home/your-user/t2-wifi-firmware/lib/firmware/brcm/
 ;;;
 ;;; REQUIRED FILES:
 ;;; - brcmfmac4364b3-pcie.bin
@@ -13,17 +13,24 @@
 ;;; Additionally, these names are targeted to my specific release so some changes might 
 ;;; be needed.
 ;;;
+
+(define-module (t2-wifi-firmware)
+  #:use-module (guix packages)
+  #:use-module (guix gexp)
+  #:use-module (guix git-download)
+  #:use-module (guix build-system copy))
+
 (define-public t2-wifi-firmware
   (package
-    (name "t2-wifi-firmware-local")
-    (version "1.0.0")
+    (name "t2-wifi-firmware")
+    (version "1.0.2")
     (source
-      (local-file "/home/jaggar/.config/t2-wifi-firmware/lib/firmware/brcm/"
+      (local-file "/home/jaggar/t2-wifi-firmware"
                   #:recursive? #t))
-    (build-system trivial-build-system)
-    (arguments
-      `(#:install-plan
-        '(("." "/"))))
+    (build-system copy-build-system)
+    (home-page "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/")
     (synopsis "Locally sourced Wi-Fi firmware for Apple T2 Macs")
     (description synopsis)
     (license #f)))
+
+t2-wifi-firmware
