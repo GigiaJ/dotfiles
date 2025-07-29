@@ -7,12 +7,14 @@
   #:use-module ((gnu packages gnome) #:select (network-manager-openvpn))
   #:use-module ((gnu packages linux) #:select (v4l2loopback-linux-module))
   #:use-module ((gnu packages games) #:select (steam-devices-udev-rules))
+  #:use-module ((gnu packages version-control) #:select (git))
+  #:use-module ((gnu packages package-management) #:select (stow))
+
 
   ;;; Service definitions
   #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type))
   #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type gnome-keyring-service-type %desktop-services))
   #:use-module ((gnu services pm) #:select (power-profiles-daemon-service-type))
-  #:use-module ((gnu services xorg) #:select (gdm-service-type))
   #:use-module ((gnu services ssh) #:select (openssh-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
 
@@ -68,7 +70,7 @@
                 %base-user-accounts))
   (packages
     (append
-     (map specification->package '( "hyprland-input-capture")) 
+     (map specification->package '( "hyprland-input-capture" "git" "stow")) 
       %base-packages))
 
     (services
@@ -77,7 +79,7 @@
     (service docker-service-type)
     (service openssh-service-type)
     (service bluetooth-service-type)
-    (service power-profiles-daemon-service-type)
+    ;;(service power-profiles-daemon-service-type)
     ;; Add udev rules for Steam controllers and other hardware.
     (udev-rules-service 'steam-devices steam-devices-udev-rules)
     ;; Raise the open file descriptor limits. This prevents errors in applications
@@ -87,7 +89,7 @@
             (list
             (pam-limits-entry "*" 'soft 'nofile 65536)
             (pam-limits-entry "*" 'hard 'nofile 262144)))
-    (service gnome-keyring-service-type)
+    ;;(service gnome-keyring-service-type)
     ;; Modify the default desktop services to add OpenVPN support
     ;; directly into NetworkManager.
     ;; Otherwise we can't use our VPN config files.
