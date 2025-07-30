@@ -23,9 +23,12 @@
     "git"             ;; A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
     "strace"          ;; A diagnostic, debugging, and instructional userspace utility for Linux to monitor system calls and signals.
     "runc"            ;; A CLI tool for spawning and running containers according to the OCI specification.
-    "cmake"
-    "make"
-    "python"
+    "cmake"           ;; Cross-platform build system generator. Highly used in C and C++ projects.
+    "make"            ;; Build automation tool that reads from a Makefile t compile and link programs. Highly used in C and C++ projects.
+    "python"          ;; Provides the core interpreter and standard library for python so you might run python programs...
+    "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Modern replacement for Org-mode (probably).
+    "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
+    "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
   )))
   
 (define %program-packages
@@ -45,7 +48,7 @@
     "openscad"                ;; A software for creating solid 3D CAD objects.
     "conky"                   ;; A free, light-weight system monitor for X, that displays any kind of information on your desktop.
     "code-server"             ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
-    "nextcloud-client"
+    "nextcloud-client"        ;; A self-host-able Cloud platform for files, communication, file-sharing, and collaboration. Super useful for syncing our home directory files like some would use OneDrive.
   )))
 
 (define %utility-packages
@@ -58,9 +61,14 @@
   "pkg-config"              ;; A helper tool used when compiling applications and libraries to retrieve information about installed libraries.
   "util-linux"              ;; A standard package of essential Linux command-line utilities.
   "btrfs-progs"             ;; A set of userspace utilities for managing Btrfs filesystems.
-  "tinyxml2"
-  "gtkmm"
-   ))))
+  "axel"                    ;; Light-weight command-line download accelerator.
+  "playerctl"               ;; Command-line controller for media players that support MPRIS (VLC, Spotify, etc)
+  "cava"                    ;; Console-based audio visualizer. Displays music visualizations in your terminal.
+  "jq"                      ;; Lightweight and powerful command-line JSON processor — perfect for parsing and manipulating JSON.
+  "openssl"                 ;; Command line tool for tasks like generating public and private keys, encrypting files, testing SSL connections, and more.
+  "procps"                  ;; A set of command-line and full-screen utilities that provide information out of the /proc filesystem, including `ps`, `top`, and `kill`.
+  "cloudflared"             ;; Cloudflare's tunneling tool — exposes local services securely to the internet via Cloudflare.
+))))
 
 (define %lib-packages
   (append
@@ -78,9 +86,11 @@
   "egl-wayland"             ;; A library that allows EGL (a Khronos rendering API) to work with the Wayland display protocol.   
   "libappindicator"         ;; A library that allows applications to export a menu to the system tray.
   "libdbusmenu-qt"          ;; A Qt implementation for libdbusmenu, allowing Qt applications to create D-Bus menus.
-  "procps"                  ;; A set of command-line and full-screen utilities that provide information out of the /proc filesystem, including `ps`, `top`, and `kill`.
   "libnotify"               ;; A library for sending desktop notifications to a notification daemon.
-  "libuv"
+  "libuv"                   ;; A library for async operations. Used especially in Node.js and Cmake.
+  "tinyxml2"                ;; A lightweight C++ XML parser. Just meant to be included as a .cpp and .h really.
+  "yad"                     ;; Yet Another Dialog. Creates GTK+ dialog boxes from shell scripts.
+  "python-requests"         ;; Python library for HTTP requests — simple and elegant API for web interactions.
 ))))
 
 
@@ -105,7 +115,9 @@
   "gtk"                     ;; The GIMP Toolkit, a multi-platform toolkit for creating graphical user interfaces.
   "gdk-pixbuf"              ;; A toolkit for image loading and pixel buffer manipulation, often used with GTK.
   "bluez"                   ;; The official Linux Bluetooth protocol stack; it provides the core Bluetooth functionality.
-  "axel"
+  "glibc-locales"           ;; Provides locale data for glibc — enables language and regional settings.
+  "lxqt-policykit"          ;; PolicyKit authentication agent for LXQt desktop — handles privilege escalation prompts.
+
    ))))
 
 (define %desktop-packages
@@ -113,9 +125,14 @@
   (specifications->packages
   '(
   "hicolor-icon-theme"      ;; A fallback icon theme that provides a standard directory structure for icon themes.
+  "papirus-icon-theme"      ;; Stylish and popular icon theme — supports many desktop environments.
+  "adwaita-icon-theme"      ;; GNOME’s default icon theme — clean and consistent.
   "gnome-themes-extra"      ;; Provides extra themes for the GNOME desktop, including the popular Adwaita-dark.
-  "bash"
-  "zsh"                     ;; An extended Bourne shell (sh) with many improvements, including more powerful interactive features.
+  "breeze-icons"            ;; Default icon theme for KDE Plasma — clean and modern.
+  "qt6ct"                   ;; Configuration tools for Qt applications — lets you theme Qt apps outside KDE.
+  "qt5ct"                   ;; Configuration tools for Qt applications — lets you theme Qt apps outside KDE.
+  "bash"                    ;; Bourne Again shell (sh) with many improvements.
+  "zsh"                     ;; An extended Bourne shell (sh) with many improvements. Tends to be a bit more feature rich than Bash.
   "network-manager-openvpn" ;; A plugin for NetworkManager to support OpenVPN connections.
   "waybar"                  ;; Provides a highly customizable Wayland bar for Sway and other wlroots-based compositors.
   "swaynotificationcenter"  ;; A simple notification daemon for Sway/Wayland that displays notifications.
@@ -144,42 +161,18 @@
   "font-google-noto-sans-cjk" ;; Sans-serif variant of Noto for CJK scripts.
   "font-google-noto-emoji"  ;; The emoji font from the Noto family, providing full-color emoji support.
   "font-nerd-fonts"         ;; A collection of patched fonts with icons (Devicons, Font Awesome, etc.) for use in terminals and status bars.
-  "rofi"
-  "yad"
-  "playerctl"
-  "wlogout"
-  "jq"
-  "wallust"
-  "swww"
-  "hyprpaper"
-  "cava"
-  "openssl"
-  ;;
-  "jupyter"
-  "python-jupytext"
-  "python-jupyter-console"
-  "cloudflared"
-  ;;
-  "glibc-locales"
-  ;;
-  "ark"
-  "mousepad"
-  ;;
-  "breeze-icons"
-  "qt6ct"
-  "qt5ct"
-  ;;
-  "python-requests"
-  "power-profiles-daemon"
-  "papirus-icon-theme"
-  "adwaita-icon-theme"
-  ;;
-  "gnome-keyring"
-  ;;
-  "lxqt-policykit"
-  ;;
-  "btop"
-  "kitty"
+  "rofi"                    ;; An application launcher. For us it is used alongside hyperland.
+  "wlogout"                 ;;
+  "wallust"                 ;; A fast wallpaper color scheme generator. Can theme your system based on your current wallpaper.
+  "swww"                    ;; A Wayland wallpaper daemon that supports animated wallpapers, transitions, and per monitor wall papers. Not currently using, but should.
+  "hyprpaper"               ;; A wallpaper manager (daemon included) for Hyprland (Wayland compositor) supports per monitor wall papers and IPC control. Currently using. (They will not add animated wallpapers). Simplicity in mind.
+  "ark"                     ;; KDE archive manager — handles zip, tar, rar, and other formats.
+  "mousepad"                ;; Lightweight text editor for Xfce — simple and fast.
+  "btop"                    ;; Modern resource monitor — shows CPU, memory, disk, and network usage with a slick UI.
+  "kitty"                   ;; GPU-based terminal emulator — fast, feature-rich, and highly customizable.
+  ;; Not currently in active use
+  "power-profiles-daemon"   ;; Manages power profiles (balanced, performance, power-saver) on Linux systems.
+  "gnome-keyring"           ;; Secure storage for passwords and keys, integrated with GNOME.
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
