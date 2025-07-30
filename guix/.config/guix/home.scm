@@ -177,6 +177,9 @@
   "gnome-keyring"
   ;;
   "lxqt-policykit"
+  ;;
+  "btop"
+  "kitty"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
