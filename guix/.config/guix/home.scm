@@ -172,7 +172,8 @@
   "kitty"                   ;; GPU-based terminal emulator — fast, feature-rich, and highly customizable.
   ;; Not currently in active use
   "power-profiles-daemon"   ;; Manages power profiles (balanced, performance, power-saver) on Linux systems.
-  "gnome-keyring"           ;; Secure storage for passwords and keys, integrated with GNOME.
+  "kwallet"                 ;; Secure storage for passwords and keys, integrated with KDE.
+  "pam-kwallet"             ;; Auto-unlock key ring 
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
