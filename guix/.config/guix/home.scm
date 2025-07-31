@@ -29,6 +29,7 @@
     "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Modern replacement for Org-mode (probably).
     "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
     "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
+    "zsh"
   )))
   
 (define %program-packages
@@ -91,6 +92,7 @@
   "tinyxml2"                ;; A lightweight C++ XML parser. Just meant to be included as a .cpp and .h really.
   "yad"                     ;; Yet Another Dialog. Creates GTK+ dialog boxes from shell scripts.
   "python-requests"         ;; Python library for HTTP requests — simple and elegant API for web interactions.
+  "python-pyquery"
 ))))
 
 
@@ -171,9 +173,10 @@
   "btop"                    ;; Modern resource monitor — shows CPU, memory, disk, and network usage with a slick UI.
   "kitty"                   ;; GPU-based terminal emulator — fast, feature-rich, and highly customizable.
   ;; Not currently in active use
-  "power-profiles-daemon"   ;; Manages power profiles (balanced, performance, power-saver) on Linux systems.
+  "power-profiles-daemon"   ;; Manages power profiles (balanced, pe rformance, power-saver) on Linux systems.
   "kwallet"                 ;; Secure storage for passwords and keys, integrated with KDE.
-  "pam-kwallet"             ;; Auto-unlock key ring 
+  "node"            ;; Node.JS Interpreter and NPM
+  "dolphin"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
