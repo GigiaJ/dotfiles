@@ -13,7 +13,7 @@
 
   ;;; Service definitions
   #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type))
-  #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type gnome-keyring-service-type %desktop-services))
+  #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services))
   #:use-module ((gnu services pm) #:select (power-profiles-daemon-service-type))
   #:use-module ((gnu services ssh) #:select (openssh-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
@@ -79,6 +79,7 @@
     (service docker-service-type)
     (service openssh-service-type)
     (service bluetooth-service-type)
+    (service kwallet-service-type)
     ;;(service power-profiles-daemon-service-type)
     ;; Add udev rules for Steam controllers and other hardware.
     (udev-rules-service 'steam-devices steam-devices-udev-rules)
