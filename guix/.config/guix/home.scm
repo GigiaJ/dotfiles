@@ -178,6 +178,7 @@
   "node"                    ;; Node.JS Interpreter and NPM
   "dolphin"                 ;; File explorer with a lovely interface and deep feature set.
   "ksshaskpass"             ;; Front-end for ssh-add to store passwords of SSH key into KWallet.
+  "kwallet-pam"             ;;
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
