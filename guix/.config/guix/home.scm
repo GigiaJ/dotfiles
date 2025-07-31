@@ -175,8 +175,9 @@
   ;; Not currently in active use
   "power-profiles-daemon"   ;; Manages power profiles (balanced, pe rformance, power-saver) on Linux systems.
   "kwallet"                 ;; Secure storage for passwords and keys, integrated with KDE.
-  "node"            ;; Node.JS Interpreter and NPM
-  "dolphin"
+  "node"                    ;; Node.JS Interpreter and NPM
+  "dolphin"                 ;; File explorer with a lovely interface and deep feature set.
+  "ksshaskpass"             ;; Front-end for ssh-add to store passwords of SSH key into KWallet.
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
