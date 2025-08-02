@@ -29,7 +29,7 @@
                  ;; BTRFS root partition on the main NVMe drive.
                  (file-system
                   (mount-point "/")
-                  (device (uuid "b9c6ca07-2d84-4730-8fb7-975f481bf36b"
+                  (device (uuid "53c75736-f327-4164-a16b-fbeead54b9d6"
                                 'btrfs))
                   (type "btrfs"))
                  ;; Separate BTRFS partition on a secondary drive for games.
@@ -38,10 +38,16 @@
                   (device (uuid "c3231cc4-d95f-4656-988d-24151ab48137"
                                 'btrfs))
                   (type "btrfs"))
+		 ;; Home BTRFS partition
+		 (file-system
+		  (mount-point "/home")
+		  (device (uuid "9b0838b9-b9d1-467e-aaeb-ef1de89f67ad"
+			'btrfs))
+		  (type "btrfs"))
                  ;; Standard EFI boot partition.
                  (file-system
                   (mount-point "/boot")
-                  (device (uuid "3621-68F9" 'fat))
+                  (device (uuid "630D-EA49" 'fat))
                   (type "vfat"))
                  %base-file-systems)
                 
