@@ -6,6 +6,7 @@
   #:use-module ((gnu packages shells) #:select (zsh))
   #:use-module ((gnu packages gnome) #:select (network-manager-openvpn))
   #:use-module ((gnu packages linux) #:select (v4l2loopback-linux-module))
+  #:use-module ((gnu packages display-managers) #:select (guix-simplyblack-sddm-theme))
   #:use-module ((gnu packages games) #:select (steam-devices-udev-rules))
   #:use-module ((gnu packages version-control) #:select (git))
   #:use-module ((gnu packages package-management) #:select (stow))
@@ -15,6 +16,8 @@
   #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type))
   #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services))
   #:use-module ((gnu services pm) #:select (power-profiles-daemon-service-type))
+  #:use-module ((gnu services sddm) #:select (sddm-service-type sddm-configuration))
+  #:use-module ((gnu services xorg) #:select (gdm-service-type))
   #:use-module ((gnu services ssh) #:select (openssh-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
 
@@ -70,11 +73,14 @@
                 %base-user-accounts))
   (packages
     (append
-     (map specification->package '( "hyprland-input-capture" "git" "stow")) 
+     (map specification->package '( "hyprland-input-capture" "git" "stow" "guix-simplyblack-sddm-theme")) 
       %base-packages))
 
     (services
     (cons*
+    (service sddm-service-type
+	(sddm-configuration
+	(theme "guix-simplyblack-sddm")))
     (service containerd-service-type)
     (service docker-service-type)
     (service openssh-service-type)
@@ -95,6 +101,7 @@
     ;; directly into NetworkManager.
     ;; Otherwise we can't use our VPN config files.
     (modify-services %desktop-services
+        (delete gdm-service-type)
         (network-manager-service-type config =>
         (network-manager-configuration
         (inherit config)
