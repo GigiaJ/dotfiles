@@ -12,25 +12,25 @@
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "poweroff",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "logout",
-    "action" : "loginctl kill-session $XDG_SESSION_ID",
+    "action" : "hyprctl dispatch exit",
     "text" : "Logout",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
