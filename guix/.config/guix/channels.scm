@@ -7,10 +7,6 @@
         "897c1a470da759236cc11798f4e0a5f7d4d59fbc"
         (openpgp-fingerprint
           "2A39 3FFF 68F4 EF7A 3D29 12AF 6F51 20A0 22FB B2D5"))))
-  (channel
-    (name 'gchannel)
-    (url "https://github.com/GigiaJ/Guix-Personal-Packages.git")
-    (branch "main"))
 (channel
   (name 'efraim-dfsg)
   (url "https://git.sr.ht/~efraim/my-guix")
@@ -38,4 +34,14 @@
           "5d1270d51c64457d61cd46ec96e5599176f315a4"
           (openpgp-fingerprint
            "C780 21F7 34E4 07EB 9090  0CF1 4ACA 6D6F 89AB 3162"))))
+  (channel
+      (name 'gunit)
+      (url "https://codeberg.org/Gigia/gunit.git")
+      (branch "everything")
+      (introduction
+               (make-channel-introduction
+          "d84d40a023ed8e13b39e306f7a2e4b2b1d7d7844"
+          (openpgp-fingerprint
+           "AE6F 7F0F 6E0D AFB9 6E84  8994 C3A7 E8D7 2261 8435"))))
+
   %default-channels)
