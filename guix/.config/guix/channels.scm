@@ -37,10 +37,10 @@
   (channel
       (name 'gunit)
       (url "https://codeberg.org/Gigia/gunit.git")
-      (branch "everything")
+      (branch "channel")
       (introduction
                (make-channel-introduction
-          "d84d40a023ed8e13b39e306f7a2e4b2b1d7d7844"
+          "23e04f02eb6bb03b16ad336aa073a83e24cd2e6a"
           (openpgp-fingerprint
            "AE6F 7F0F 6E0D AFB9 6E84  8994 C3A7 E8D7 2261 8435"))))
 
