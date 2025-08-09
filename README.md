@@ -1,5 +1,8 @@
 Contains my dotfiles including my Guix configuration files.
 
+For the channel with packages I maintain: [gunit](https://codeberg.org/Gigia/gunit)
+
+
 Other useful bits are my ZSH scripts for Github/Gitea/Codeberg syncing and SSH agent prompting.
 
 Also includes Guix configurations for an intel Mac using my kernel patches package and t2-wifi-firmware (which isn't public).
