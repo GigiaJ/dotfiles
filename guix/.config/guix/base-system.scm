@@ -15,7 +15,6 @@
   ;;; Service definitions
   #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type))
   #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services))
-  #:use-module ((gnu services pm) #:select (power-profiles-daemon-service-type))
   #:use-module ((gnu services sddm) #:select (sddm-service-type sddm-configuration))
   #:use-module ((gnu services xorg) #:select (gdm-service-type))
   #:use-module ((gnu services ssh) #:select (openssh-service-type))
@@ -78,24 +77,18 @@
 
     (services
     (cons*
-    (service sddm-service-type
-	(sddm-configuration
-	(theme "guix-simplyblack-sddm")))
-    (service containerd-service-type)
-    (service docker-service-type)
-    (service openssh-service-type)
-    (service bluetooth-service-type)
-    (service kwallet-service-type)
-    ;;(service power-profiles-daemon-service-type)
+     (service sddm-service-type	(sddm-configuration	(theme "guix-simplyblack-sddm")))
+     (service containerd-service-type)
+     (service docker-service-type)
+     (service openssh-service-type)
+     (service bluetooth-service-type)
+     (service kwallet-service-type)
     ;; Add udev rules for Steam controllers and other hardware.
-    (udev-rules-service 'steam-devices steam-devices-udev-rules)
+     (udev-rules-service 'steam-devices steam-devices-udev-rules)
     ;; Raise the open file descriptor limits. This prevents errors in applications
     ;; that need to open many files, such as database servers or games running
     ;; through Wine/Proton.
-    (service pam-limits-service-type
-            (list
-            (pam-limits-entry "*" 'soft 'nofile 65536)
-            (pam-limits-entry "*" 'hard 'nofile 262144)))
+     (service pam-limits-service-type (list (pam-limits-entry "*" 'soft 'nofile 65536) (pam-limits-entry "*" 'hard 'nofile 262144)))
     ;;(service gnome-keyring-service-type)
     ;; Modify the default desktop services to add OpenVPN support
     ;; directly into NetworkManager.
