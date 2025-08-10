@@ -39,7 +39,7 @@
     "librewolf"               ;; An independent fork of Firefox, with the primary goals of privacy, security, and user freedom.
     "floorp"                  ;; A fork of Firefox that is more customizable and has more features than the original. It has PWAs baked in.
     "steam"                   ;; A video game digital distribution service by Valve.
-    "neovim"                  ;; A hyperextensible, Vim-based text editor that’s backwards-compatible with Vim. We combo it with the extension in code-server/vscode.
+;;    "neovim"                  ;; A hyperextensible, Vim-based text editor that’s backwards-compatible with Vim. We combo it with the extension in code-server/vscode.
     "vscodium"                ;; A community-driven, freely-licensed binary distribution of Microsoft’s Visual Studio Code.
     "microsoft-edge-stable"   ;; The stable release of Microsoft's Edge web browser.
     "bolt-launcher"           ;; A third-party launcher for Jagex accounts for the popular online game RuneScape and Old School RuneScape.
@@ -266,31 +266,6 @@ shepherd services.")
    (description "A user service to run a VS Code instance in the browser.")))
 
 
-
-(define (kwallet-service config)
-  (list
-   (shepherd-service
-    (documentation "Run the KDE Wallet daemon (kwalletd6).")
-    ;; Ensure the 'kwallet' package is available in the environment.
-    (provision '(kwallet))
-    ;; These modules provide 'make-forkexec-constructor', etc.
-    (modules '((shepherd support)))
-    (start #~(make-forkexec-constructor
-              (list #$(file-append (specification->package "kwallet")
-                                 "/bin/kwalletd6"))
-              #:log-file (string-append %user-log-dir "/kwalletd6.log")))
-    (stop #~(make-kill-destructor))
-    (respawn? #t))))
-
-(define home-kwallet-service-type
-  (service-type
-   (name 'home-kwallet) ;; Changed from 'kwallet6d for clarity
-   (extensions (list (service-extension home-shepherd-service-type kwallet-service)))
-   (default-value #t)
-   (description "A user service to run the KDE Wallet daemon (kwalletd6) on log in.")))
-
-
-
 (home-environment
   ;; The 'packages' field aggregates all previously defined lists of software
   ;; to be installed in our profile.
@@ -315,7 +290,6 @@ shepherd services.")
     ;; Activates the custom code-server service defined above.
     (service home-code-server-service-type)
 
-    (service home-kwallet-service-type)
 
     ;; Manages dotfiles in the user's home directory.
     (service home-files-service-type
