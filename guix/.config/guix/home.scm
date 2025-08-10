@@ -185,6 +185,13 @@
   "kwalletmanager"	    ;;
   "kwallet"
   "qttools"
+  "pinentry"
+  "pinentry-tty"
+  "docker-compose"
+  "breeze-icons"
+  "kiconthemes"
+  "kio"
+  
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
