@@ -311,7 +311,7 @@ shepherd services.")
     (service home-gpg-agent-service-type
          (home-gpg-agent-configuration
           (pinentry-program
-           (file-append (specification->package "pinentry") "/bin/pinentry"))
+           (file-append (specification->package "pinentry-tty") "/bin/pinentry-tty"))
           (default-cache-ttl 28800)
           (max-cache-ttl 28800)
           (default-cache-ttl-ssh 28800)
