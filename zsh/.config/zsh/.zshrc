@@ -37,29 +37,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-# . "$HOME/.local/share/../bin/env"
-
-
-# Start and reuse ssh-agent across sessions
-SSH_ENV="$HOME/.ssh/agent-environment"
-
-start_agent() {
-    echo "Initializing new SSH agent..."
-    ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-    chmod 600 "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    ssh-add
-}
-
-# Source the agent environment if it exists
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    # Check if the agent is still running
-    ps -p $SSH_AGENT_PID > /dev/null || start_agent
-else
-    start_agent
-fi
-
 source ~/.config/zsh/.env
 
 gitclone() {
@@ -114,5 +91,9 @@ gitclone() {
   echo "Cloned '$repo' and added Codeberg and Gitea remote."
 }
 
-
 export GPG_TTY=$(tty)
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
