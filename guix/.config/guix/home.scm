@@ -1,5 +1,6 @@
 (use-modules (gnu home)
              (gnu home services)
+             (gnu home services gnupg)
              (gnu home services shells)
              (gnu home services shepherd)
              (gnu home services sound)
@@ -35,7 +36,7 @@
 (define %program-packages
   (specifications->packages
   '(
-    "deskflow"                ;; A productivity application designed to help you manage your tasks and workflows.
+  ;;  "deskflow"                ;; A productivity application designed to help you manage your tasks and workflows.
     "librewolf"               ;; An independent fork of Firefox, with the primary goals of privacy, security, and user freedom.
     "floorp"                  ;; A fork of Firefox that is more customizable and has more features than the original. It has PWAs baked in.
     "steam"                   ;; A video game digital distribution service by Valve.
@@ -190,7 +191,7 @@
   "docker-compose"
   "breeze-icons"
   "kiconthemes"
-  "kio"
+  ;;"kio"
   
   ))))
 
@@ -307,6 +308,15 @@ shepherd services.")
     (service home-xdg-configuration-files-service-type
              `(("gdb/gdbinit" ,%default-gdbinit)
                ("nano/nanorc" ,%default-nanorc)))
+    (service home-gpg-agent-service-type
+         (home-gpg-agent-configuration
+          (pinentry-program
+           (file-append (specification->package "pinentry") "/bin/pinentry"))
+          (default-cache-ttl 28800)
+          (max-cache-ttl 28800)
+          (default-cache-ttl-ssh 28800)
+          (max-cache-ttl-ssh 28800)
+          (ssh-support? #t)))
 
     ;; Extends the sandbox for Guix commands to include an additional directory,
     ;; useful for accessing files outside the standard home paths.
