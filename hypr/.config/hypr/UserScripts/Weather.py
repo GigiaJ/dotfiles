@@ -58,8 +58,11 @@ temp = html_data("span[data-testid='TemperatureValue']").eq(0).text()
 status = html_data("div[data-testid='wxPhrase']").text()
 status = f"{status[:16]}.." if len(status) > 17 else status
 
-# status code
-status_code = html_data("#regionHeader").attr("class").split(" ")[2].split("-")[2]
+# status code from the weather icon's name, which is more robust
+try:
+    status_code = html_data("svg[data-testid='WeatherIcon']").attr("name")
+except Exception:
+    status_code = "default"
 
 # status icon
 icon = (
