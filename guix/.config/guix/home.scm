@@ -189,10 +189,11 @@
   "pinentry"
   "pinentry-tty"
   "docker-compose"
-  "breeze-icons"
   "kiconthemes"
   ;;"kio"
-  
+  "pamixer"
+  "breeze-gtk"
+
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
@@ -316,7 +317,8 @@ shepherd services.")
           (max-cache-ttl 28800)
           (default-cache-ttl-ssh 28800)
           (max-cache-ttl-ssh 28800)
-          (ssh-support? #t)))
+          (ssh-support? #t)
+        (extra-content "allow-loopback-pinentry")))
 
     ;; Extends the sandbox for Guix commands to include an additional directory,
     ;; useful for accessing files outside the standard home paths.
