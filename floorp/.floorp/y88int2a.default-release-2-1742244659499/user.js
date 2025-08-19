@@ -560,3 +560,5 @@ user_pref("browser.tabs.hoverPreview.enabled", true);
 user_pref("sidebar.expandOnHover", true);
 
 user_pref("browser.newtabpage.activity-stream.trendingSearch.defaultSearchEngine", "DuckDuckGo");
+
+user_pref("privacy.resistFingerprinting.exemptedDomains", "*.chickensalad.quest");
