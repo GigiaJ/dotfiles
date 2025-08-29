@@ -8,3 +8,4 @@ ssh/.ssh/known_hosts.old
 ssh/.ssh/config
 ssh/.ssh/agent-environment
 zsh/.config/zsh/.env
+/.clj-kondo/
