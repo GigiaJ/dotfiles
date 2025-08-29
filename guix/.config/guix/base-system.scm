@@ -19,10 +19,11 @@
   #:use-module ((gnu services xorg) #:select (gdm-service-type))
   #:use-module ((gnu services ssh) #:select (openssh-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
+  #:use-module ((gnu services virtualization) #:select (libvirt-service-type libvirt-configuration))
 
   ;;; Third-party and non-free modules
-  #:use-module ((gchannel packages xdg-desktop-portal-hyprland-input-capture))
-  #:use-module ((gchannel packages mac-compat-kernel))
+  #:use-module ((gunit packages xdg-desktop-portal-hyprland-input-capture))
+  #:use-module ((gunit packages linux))
   #:use-module ((nongnu packages linux) #:select (linux linux-firmware amdgpu-firmware))
   #:export (base-operating-system))
 
@@ -68,7 +69,7 @@
                  (group "users")
                  (home-directory "/home/jaggar")
                  (shell (file-append zsh "/bin/zsh"))
-                 (supplementary-groups '("docker" "wheel" "netdev" "audio" "video" "input")))
+                 (supplementary-groups '("docker" "wheel" "netdev" "audio" "video" "input" "libvirt")))
                 %base-user-accounts))
   (packages
     (append
@@ -83,6 +84,9 @@
      (service openssh-service-type)
      (service bluetooth-service-type)
      (service kwallet-service-type)
+     (service libvirt-service-type
+      (libvirt-configuration
+      (unix-sock-group "libvirt")))
     ;; Add udev rules for Steam controllers and other hardware.
      (udev-rules-service 'steam-devices steam-devices-udev-rules)
     ;; Raise the open file descriptor limits. This prevents errors in applications
