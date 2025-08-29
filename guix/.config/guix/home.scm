@@ -193,7 +193,9 @@
   ;;"kio"
   "pamixer"
   "breeze-gtk"
-
+  "virt-manager"
+  "qemu"
+  "libvirt"
   ))))
 
 (define (wayland-hyprland-env-shepherd-service config)
