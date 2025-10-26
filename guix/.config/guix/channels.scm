@@ -37,11 +37,20 @@
   (channel
       (name 'gunit)
       (url "https://codeberg.org/Gigia/gunit.git")
-      (branch "channel")
+      (branch "combined")
       (introduction
                (make-channel-introduction
-          "23e04f02eb6bb03b16ad336aa073a83e24cd2e6a"
+          "db7187b7091b9e0717b8de218131b883be0d058a"
           (openpgp-fingerprint
            "AE6F 7F0F 6E0D AFB9 6E84  8994 C3A7 E8D7 2261 8435"))))
+  (channel
+   (name 'rosenthal)
+   (url "https://codeberg.org/hako/rosenthal.git")
+   (branch "trunk")
+   (introduction
+    (make-channel-introduction
+     "7677db76330121a901604dfbad19077893865f35"
+     (openpgp-fingerprint
+      "13E7 6CD6 E649 C28C 3385  4DF5 5E5A A665 6149 17F7"))))
 
   %default-channels)
