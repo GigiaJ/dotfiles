@@ -1,12 +1,12 @@
 (ns k8s.services.nextcloud.service)
 
 (def config
-  {:stack [:vault-secrets :chart :ingress]
+  {:stack [:vault:prepare [:k8s :chart :httproute]]
    :app-namespace "nextcloud"
    :app-name      "nextcloud"
    :image-port 8080
    :vault-load-yaml true
-   :chart-opts {:fetchOpts {:repo "https://nextcloud.github.io/helm/"}
+   :k8s:chart-opts {:fetchOpts {:repo "https://nextcloud.github.io/helm/"}
                 :values {:nextcloud {:host 'host
                                      :trustedDomains ['host 'app-name]}}
                 :transformations (fn [args _opts]
