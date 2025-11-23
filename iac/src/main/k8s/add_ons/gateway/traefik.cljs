@@ -12,7 +12,19 @@
                     :namespace "traefik"
                     :values {:providers {:kubernetesGateway {:enabled true}}
                              :gatewayClass {:enabled true
-                                            :name "traefik"}}}
+                                            :name "traefik"}
+                             :ports {:web {:port 8000
+                                           :expose {:default true}
+                                           :exposedPort 80
+                                           :protocol "TCP"}
+                                     :websecure {:port 8443
+                                                 :expose {:default true}
+                                                 :exposedPort 443
+                                                 :protocol "TCP"
+                                                 :transport {:respondingTimeouts
+                                                             {:readTimeout "600s"
+                                                              :writeTimeout "600s"
+                                                              :idleTimeout "600s"}}}}}}
    :k8s:gateway-opts
    {:metadata {:name "main-gateway"
                :namespace "traefik"}
