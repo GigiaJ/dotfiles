@@ -4,17 +4,13 @@
    [infra.openbao :as openbao]
    [k8s.add-ons.csi-driver.hetzner :as hetzner-csi]
    [infra.dns :as dns]
-   [infra.buildkit :as buildkit]
    [k8s.preparers.harbor :as harbor-prepare]
    
-   [k8s.add-ons.ingress-controller.caddy :as caddy]
    [k8s.add-ons.gateway.traefik :as traefik]
    [k8s.add-ons.cert-manager :as cert-manager]
    [k8s.add-ons.csi-driver.wasabi :as wasabi-csi]
    [k8s.add-ons.image-registry.harbor :as harbor]
    [k8s.add-ons.secret-replicator :as secret-replicator]
-   [k8s.add-ons.minio :as minio]
-   [k8s.add-ons.s3proxy :as s3proxy]
    [k8s.add-ons.proxy :as proxy]
    [k8s.services.nextcloud.service :as nextcloud-service]
    [k8s.services.mesite.service :as mesite-service]
@@ -68,7 +64,7 @@
 
 (def deployment-resources-definition
   (create-resource-definition
-   [#_buildkit/config #_nextcloud-service/config #_foundryvtt-service/config mesite-service/config #_productive-service/config #_gitea-service/config #_act-runner-service/config]
+   [nextcloud-service/config foundryvtt-service/config mesite-service/config productive-service/config gitea-service/config act-runner-service/config]
    ["base" "init" "shared"]
    (general-provider-output-refs)))
 
