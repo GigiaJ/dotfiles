@@ -13,7 +13,7 @@
 
 
   ;;; Service definitions
-  #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type))
+  #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type docker-configuration))
   #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services))
   #:use-module ((gnu services sddm) #:select (sddm-service-type sddm-configuration))
   #:use-module ((gnu services xorg) #:select (gdm-service-type))
@@ -69,7 +69,7 @@
                  (group "users")
                  (home-directory "/home/jaggar")
                  (shell (file-append zsh "/bin/zsh"))
-                 (supplementary-groups '("docker" "wheel" "netdev" "audio" "video" "input" "libvirt")))
+                 (supplementary-groups '("docker" "kvm" "wheel" "netdev" "audio" "video" "input" "libvirt")))
                 %base-user-accounts))
   (packages
     (append
@@ -80,7 +80,11 @@
     (cons*
      (service sddm-service-type	(sddm-configuration	(theme "guix-simplyblack-sddm")))
      (service containerd-service-type)
-     (service docker-service-type)
+    (service docker-service-type
+            (docker-configuration
+              (environment-variables
+              (list "SSL_CERT_FILE=/run/current-system/profile/etc/ssl/certs/ca-certificates.crt"
+                    "GIT_SSL_CAINFO=/run/current-system/profile/etc/ssl/certs/ca-certificates.crt"))))
      (service openssh-service-type)
      (service bluetooth-service-type)
      (service kwallet-service-type)
