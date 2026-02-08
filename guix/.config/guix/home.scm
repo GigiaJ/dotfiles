@@ -33,7 +33,8 @@
                               ;;    "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Modern replacement for Org-mode (probably).
                               ;;    "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
                               ;;   "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
-                              
+                              "gnupg"
+
                               "emacs"
                               "emacs-eaf"
                               "emacs-eaf-browser")))
@@ -60,6 +61,14 @@
                                       "nextcloud-client" ;; A self-host-able Cloud platform for files, communication, file-sharing, and collaboration. Super useful for syncing our home directory files like some would use OneDrive.
                                       "node" ;; Node.JS Interpreter and NPM
                                       ;;   "ollama" ;; A CLI tool to allow LLM (and other) model loading to provide to a front-end tool (or to use in the CLI)
+                                      "pantalaimon"
+
+"gobject-introspection" ;; for panta
+"python-pygobject" ;; for panta
+"gtk+"
+
+
+;; emacs below
                                       "python-pyqt6-sip"
 
                                       "python-pyqtwebengine"
@@ -69,14 +78,13 @@
                                       "emacs"
                                       "emacs-org"
                                       ;;  "emacs-eaf"
-                                      ;;guix shell python-pyqt emacs-treemacs  emacs-geiser emacs-org python-pyqtwebengine emacs-doom-themes emacs-magit python emacs emacs-ement wmctrl emacs-doom-modeline emacs-projectile -- emacs     
                                       "emacs-magit"
                                       "emacs-tramp"
                                       "emacs-projectile"
                                       "emacs-doom-themes"
-                                      "emacs-doom-modline"
+                                      "emacs-doom-modeline"
                                       "emacs-treemacs"
-                                      "emacs-lsp"
+                                      "emacs-lsp-mode"
                                       "emacs-ement"
                                       "emacs-eaf-browser"))
           (list (make-code-server-with-font code-server ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
