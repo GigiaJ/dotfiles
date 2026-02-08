@@ -7,6 +7,10 @@
   (kernel linux)
   (host-name "Catdog7")
 
+  (swap-devices
+   (list
+	   (swap-space (target (uuid "38e80242-7431-4623-9b0a-0b4836d1c74d")))))
+
   (bootloader (bootloader-configuration
                (bootloader grub-efi-bootloader)
                (targets (list "/boot"))
@@ -15,10 +19,6 @@
                                (label "GParted")
                                (device (uuid "2025-01-30-22-09-48-00" 'iso9660))
                                (chain-loader "/EFI/boot/grubx64.efi"))
-                              (menu-entry
-                               (label "Arch Linux")
-                               (device (uuid "2755-7752" 'fat))
-                               (chain-loader "/EFI/arch/grubx64.efi"))
                               (menu-entry
                                (label "Windows")
                                (device (uuid "F204-F2E2" 'fat))
@@ -29,7 +29,7 @@
                  ;; BTRFS root partition on the main NVMe drive.
                  (file-system
                   (mount-point "/")
-                  (device (uuid "53c75736-f327-4164-a16b-fbeead54b9d6"
+                  (device (uuid "be852cc7-cdfa-4afb-b2b6-b826d7ebe6d9"
                                 'btrfs))
                   (type "btrfs"))
                  ;; Separate BTRFS partition on a secondary drive for games.
@@ -49,8 +49,4 @@
                   (mount-point "/boot")
                   (device (uuid "630D-EA49" 'fat))
                   (type "vfat"))
-                 %base-file-systems)
-                
-                )
-              
-              )
+                 %base-file-systems)))
