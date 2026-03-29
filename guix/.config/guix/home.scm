@@ -14,10 +14,13 @@
              (gunit services ai)
              (selected-guix-works packages fonts)
              (gunit services code-server)
+             (gunit services obs)
              (guix gexp))
 
 (define %dev-packages
   (specifications->packages '("clojure" ;; A dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming.
+                              "clojure-tools"
+                              "rlwrap"
                               "openjdk:jdk" ;; The Java Development Kit, an implementation of the Java Platform, Standard Edition.
                               "leiningen" ;; A build automation and dependency management tool for the Clojure programming language.
                               "valgrind" ;; An instrumentation framework for building dynamic analysis tools that can be used to automatically detect memory management and threading bugs, and to profile your programs in detail.
@@ -33,11 +36,19 @@
                               ;;    "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Modern replacement for Org-mode (probably).
                               ;;    "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
                               ;;   "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
+                              "kubectl"
+                              "zsh"
                               "gnupg"
-
-                              "emacs"
-                              "emacs-eaf"
+                              "emacs-pgtk"
+                              "emacs-application-framework"
+                              "wmctrl"
+                              "ispell"
+                              "hunspell"
+                              "hunspell-dict-en-us"
+			                        "mosh"
+                              "tree"
                               "emacs-eaf-browser")))
+
 
 (define %program-packages
   (append (specifications->packages '( ;; Work requirements
@@ -61,30 +72,30 @@
                                       "nextcloud-client" ;; A self-host-able Cloud platform for files, communication, file-sharing, and collaboration. Super useful for syncing our home directory files like some would use OneDrive.
                                       "node" ;; Node.JS Interpreter and NPM
                                       ;;   "ollama" ;; A CLI tool to allow LLM (and other) model loading to provide to a front-end tool (or to use in the CLI)
-                                      "pantalaimon"
-
-"gobject-introspection" ;; for panta
-"python-pygobject" ;; for panta
-"gtk+"
-
-
-;; emacs below
                                       "python-pyqt6-sip"
+
+"wf-recorder"
+"wl-clipboard"
+"xclip"
 
                                       "python-pyqtwebengine"
                                       "python-sip"
                                       "python-epc"
                                       "python-sexpdata"
-                                      "emacs"
                                       "emacs-org"
                                       ;;  "emacs-eaf"
+                                      ;;guix shell python-pyqt emacs-treemacs  emacs-geiser emacs-org python-pyqtwebengine emacs-doom-themes emacs-magit python emacs emacs-ement wmctrl emacs-doom-modeline emacs-projectile -- emacs     
                                       "emacs-magit"
                                       "emacs-tramp"
                                       "emacs-projectile"
                                       "emacs-doom-themes"
                                       "emacs-doom-modeline"
                                       "emacs-treemacs"
-                                      "emacs-lsp-mode"
+"emacs-polymode"
+"emacs-polymode-org"
+"clojure-lsp"
+"clj-kondo"
+                                      ;;"emacs-lsp"
                                       "emacs-ement"
                                       "emacs-eaf-browser"))
           (list (make-code-server-with-font code-server ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
