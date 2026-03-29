@@ -268,16 +268,18 @@
              `(("gdb/gdbinit" ,%default-gdbinit)
                ("nano/nanorc" ,%default-nanorc)))
     (service home-gpg-agent-service-type
-             (home-gpg-agent-configuration (pinentry-program (file-append (specification->package
-                                                                           "pinentry-tty")
-                                                              "/bin/pinentry-tty"))
+             (home-gpg-agent-configuration
+              ;;(pinentry-program (file-append (specification->package
+                ;;                                                           "pinentry-tty")
+                  ;;                                            "/bin/pinentry-tty"))
                                            (default-cache-ttl 28800)
                                            (max-cache-ttl 28800)
                                            (default-cache-ttl-ssh 28800)
                                            (max-cache-ttl-ssh 28800)
                                            (ssh-support? #t)
                                            (extra-content
-                                            "allow-loopback-pinentry")))
+                                            "allow-emacs-pinentry\n
+                                            allow-loopback-pinentry")))
 
     ;; Extends the sandbox for Guix commands to include an additional directory,
     ;; useful for accessing files outside the standard home paths.
