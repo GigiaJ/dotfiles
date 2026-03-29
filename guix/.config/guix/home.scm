@@ -257,7 +257,7 @@
     (service home-pipewire-service-type)
     ;;    (service home-ollama-service-type)
     (service home-code-server-service-type)
-
+    (service home-obs-virtual-mic-service-type)
     ;; Manages dotfiles in the user's home directory.
     (service home-files-service-type
              `((".guile" ,%default-dotguile)
