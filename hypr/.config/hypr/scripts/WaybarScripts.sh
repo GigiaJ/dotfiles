@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  #
 # This file used on waybar modules sourcing defaults set in $HOME/.config/hypr/UserConfigs/01-UserDefaults.conf
 

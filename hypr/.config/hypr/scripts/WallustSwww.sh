@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # Wallust Colors for current wallpaper
 

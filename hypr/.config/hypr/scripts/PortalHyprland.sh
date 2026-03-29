@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For manually starting xdg-desktop-portal-hyprland
 

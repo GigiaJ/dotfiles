@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # This is for custom version of waybar idle_inhibitor which activates / deactivates hypridle instead
 

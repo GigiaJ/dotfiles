@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 # /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For disabling touchpad.
 # Edit the Touchpad_Device on ~/.config/hypr/UserConfigs/Laptops.conf according to your system

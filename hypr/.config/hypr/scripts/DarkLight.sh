@@ -1,4 +1,4 @@
-#!/home/jaggar/.guix-profile/bin/zsh
+#!/home/jaggar/.guix-home/profile/bin/zsh
 ## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For Dark and Light switching
 # Note: Scripts are looking for keywords Light or Dark except for wallpapers as the are in a separate directories
