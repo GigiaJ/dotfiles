@@ -161,7 +161,17 @@
                                       "bluez" ;; The official Linux Bluetooth protocol stack; it provides the core Bluetooth functionality.
                                       "glibc-locales" ;; Provides locale data for glibc — enables language and regional settings.
                                       "lxqt-policykit" ;; PolicyKit authentication agent for LXQt desktop — handles privilege escalation prompts.
-                                      
+
+
+                                      ;; misc
+                                      gtk+
+                                      gobject-introspection
+;;                                      export GI_TYPELIB_PATH="$HOME/.guix-profile/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
+;;                                    sudo --preserve-env=GI_TYPELIB_PATH,PATH ./waydroid init
+                                      ;;  sudo ./waydroid container start
+                                      ;; ./waydroid session start
+
+
                                       ))))
 
 (define %desktop-packages
