@@ -202,8 +202,10 @@
                                       "pavucontrol" ;; A simple GTK-based volume control tool ("mixer") for PulseAudio.
                                       "nnn" ;; A fast and resource-sensitive terminal file manager.
                                       "wofi" ;; A launcher/menu program for wlroots-based Wayland compositors like Sway.
-                                      "xdg-desktop-portal" ;; A framework that allows sandboxed applications to access resources outside their sandbox.
-                                      "xdg-desktop-portal-hyprland" ;; Used to connect hyprland to the xdg-desktop-portal itself and declares certain privileges 'portals'. Should be reverted to just xdg-desktop-portal-hyprland when input-capture is merged.
+                                      ;;"xdg-desktop-portal" ;; A framework that allows sandboxed applications to access resources outside their sandbox.
+                                      ;;"xdg-desktop-portal-hyprland" ;; Used to connect hyprland to the xdg-desktop-portal itself and declares certain privileges 'portals'. Should be reverted to just xdg-desktop-portal-hyprland when input-capture is merged.
+                                      "xdg-desktop-portal-kde"
+
                                       "slurp" ;; A command-line utility to select a region on a Wayland desktop.
                                       "grim" ;; A command-line screenshot tool for Wayland compositors.
                                       "xcb-util-cursor" ;; A utility library for the XCB library, providing convenience functions for cursor management.
