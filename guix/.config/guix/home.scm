@@ -32,10 +32,12 @@
                               "cmake" ;; Cross-platform build system generator. Highly used in C and C++ projects.
                               "make" ;; Build automation tool that reads from a Makefile t compile and link programs. Highly used in C and C++ projects.
                               "python" ;; Provides the core interpreter and standard library for python so you might run python programs...
-                              ;; "ollama" 
+                              ;; "ollama"
                               ;;    "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Modern replacement for Org-mode (probably).
                               ;;    "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
                               ;;   "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
+                              "rsync"
+                              "entr"
                               "kubectl"
                               "zsh"
                               "gnupg"
