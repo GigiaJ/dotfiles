@@ -56,7 +56,8 @@
   (append (specifications->packages '( ;; Work requirements
                                        "microsoft-edge-stable" ;; The stable release of Microsoft's Edge web browser.
                                       "azure-cli" ;; CLI to interface w/ Azure resources
-                                      
+
+                                      "prismlauncher-dolly"
                                       ;; General purpose
                                       ;;  "deskflow"                ;; A productivity application designed to help you manage your tasks and workflows.
                                       ;; "librewolf" ;; An independent fork of Firefox, with the primary goals of privacy, security, and user freedom.
