@@ -166,8 +166,8 @@
 
 
                                       ;; misc
-                                      gtk+
-                                      gobject-introspection
+                                      "gtk+"
+                                      "gobject-introspection"
 ;;                                      export GI_TYPELIB_PATH="$HOME/.guix-profile/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}"
 ;;                                    sudo --preserve-env=GI_TYPELIB_PATH,PATH ./waydroid init
                                       ;;  sudo ./waydroid container start
