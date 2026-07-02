@@ -14,17 +14,19 @@
 
   ;;; Service definitions
   #:use-module ((gnu services docker) #:select (containerd-service-type docker-service-type docker-configuration))
-  #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services))
+  #:use-module ((gnu services desktop) #:select (gnome-desktop-service-type bluetooth-service-type kwallet-service-type %desktop-services plasma-desktop-service-type))
   #:use-module ((gnu services sddm) #:select (sddm-service-type sddm-configuration))
   #:use-module ((gnu services xorg) #:select (gdm-service-type))
-  #:use-module ((gnu services ssh) #:select (openssh-service-type))
+  #:use-module ((gnu services ssh) #:select (openssh-service-type openssh-configuration))
+  #:use-module ((gnu services dbus) #:select (dbus-root-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
   #:use-module ((gnu services virtualization) #:select (libvirt-service-type libvirt-configuration))
 
   ;;; Third-party and non-free modules
-  #:use-module ((gunit packages xdg-desktop-portal-hyprland-input-capture))
+;;  #:use-module ((gunit packages xdg-desktop-portal-hyprland-input-capture))
   #:use-module ((gunit packages linux))
   #:use-module ((nongnu packages linux) #:select (linux linux-firmware amdgpu-firmware))
+  #:use-module ((gnu packages wm) #:select (hyprland))
   #:export (base-operating-system))
 
 (define (base-operating-system)
@@ -73,11 +75,12 @@
                 %base-user-accounts))
   (packages
     (append
-     (map specification->package '( "hyprland-input-capture" "git" "stow" "guix-simplyblack-sddm-theme")) 
+     (map specification->package '( "hyprland" "git" "stow" "guix-simplyblack-sddm-theme"))
       %base-packages))
 
     (services
     (cons*
+     (service plasma-desktop-service-type)
      (service sddm-service-type	(sddm-configuration	(theme "guix-simplyblack-sddm")))
      (service containerd-service-type)
     (service docker-service-type
@@ -85,7 +88,10 @@
               (environment-variables
               (list "SSL_CERT_FILE=/run/current-system/profile/etc/ssl/certs/ca-certificates.crt"
                     "GIT_SSL_CAINFO=/run/current-system/profile/etc/ssl/certs/ca-certificates.crt"))))
-     (service openssh-service-type)
+    (service openssh-service-type
+	     (openssh-configuration
+        (x11-forwarding? #t)
+	      ))
      (service bluetooth-service-type)
      (service kwallet-service-type)
      (service libvirt-service-type
