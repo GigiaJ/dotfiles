@@ -25,15 +25,6 @@
            (openpgp-fingerprint
             "8D10 60B9 6BB8 292E 829B  7249 AED4 1CC1 93B7 01E2"))))
        (channel
-         (name 'selected-guix-works)
-         (url "https://github.com/gs-101/selected-guix-works.git")
-         (branch "main")
-         (introduction
-          (make-channel-introduction
-           "5d1270d51c64457d61cd46ec96e5599176f315a4"
-           (openpgp-fingerprint
-            "C780 21F7 34E4 07EB 9090  0CF1 4ACA 6D6F 89AB 3162"))))
-       (channel
          (name 'rosenthal)
          (url "https://codeberg.org/hako/rosenthal.git")
          (branch "trunk")
