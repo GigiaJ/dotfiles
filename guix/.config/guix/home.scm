@@ -49,7 +49,10 @@
                               "hunspell-dict-en-us"
 			                        "mosh"
                               "tree"
-                              "emacs-eaf-browser")))
+                              "emacs-eaf-browser"
+                              "swtpm"
+                              "ovmf"
+                              )))
 
 
 (define %program-packages
