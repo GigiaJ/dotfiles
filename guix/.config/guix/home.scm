@@ -103,9 +103,12 @@
                                       ;;"emacs-lsp"
                                       "emacs-ement"
                                       "emacs-eaf-browser"))
-          (list (make-code-server-with-font code-server ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
-                                            font-nerd-fonts-jetbrains-mono ;; This particularly builds code-server with our chosen font (since it runs in the browser the fonts must be supplied in advance)
-                                            "JetBrainsMonoNerdFontMono-"))))
+          (list
+           ;; Need to add font directly or so. Currently no font package installed
+           ;;(make-code-server-with-font code-server ;; A service that allows you to run VS Code on any machine anywhere and access it in the browser.
+                  ;;                          font-nerd-fonts-jetbrains-mono ;; This particularly builds code-server with our chosen font (since it runs in the browser the fonts must be supplied in advance)
+;;                                            "JetBrainsMonoNerdFontMono-")
+           )))
 
 (define %utility-packages
   (append (specifications->packages '("fmt" ;; A modern formatting library for C++, providing a fast and safe alternative to C-style printf.
