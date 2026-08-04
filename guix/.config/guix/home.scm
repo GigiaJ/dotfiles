@@ -12,7 +12,6 @@
              (nongnu packages)
              (gunit packages code-server)
              (gunit services ai)
-             (selected-guix-works packages fonts)
              (gunit services code-server)
              (gunit services obs)
              (guix gexp))
