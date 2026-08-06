@@ -221,7 +221,7 @@
                                       "font-google-noto-serif-cjk" ;; Serif variant of Noto for Chinese, Japanese, and Korean scripts.
                                       "font-google-noto-sans-cjk" ;; Sans-serif variant of Noto for CJK scripts.
                                       "font-google-noto-emoji" ;; The emoji font from the Noto family, providing full-color emoji support.
-                                      "font-nerd-fonts" ;; A collection of patched fonts with icons (Devicons, Font Awesome, etc.) for use in terminals and status bars.
+                                     ;; "font-nerd-fonts" ;; A collection of patched fonts with icons (Devicons, Font Awesome, etc.) for use in terminals and status bars.
                                       "rofi" ;; An application launcher. For us it is used alongside hyperland.
                                       "wlogout" ;;
                                       "wallust" ;; A fast wallpaper color scheme generator. Can theme your system based on your current wallpaper.
