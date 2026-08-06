@@ -64,10 +64,10 @@
                                       ;;  "deskflow"                ;; A productivity application designed to help you manage your tasks and workflows.
                                       ;; "librewolf" ;; An independent fork of Firefox, with the primary goals of privacy, security, and user freedom.
                                       "floorp" ;; A fork of Firefox that is more customizable and has more features than the original. It has PWAs baked in.
-                                      ;;   "steam" ;; A video game digital distribution service by Valve.
+                                      "steam" ;; A video game digital distribution service by Valve.
                                       ;;    "neovim"                  ;; A hyperextensible, Vim-based text editor that’s backwards-compatible with Vim. We combo it with the extension in code-server/vscode.
                                       "vscodium" ;; A community-driven, freely-licensed binary distribution of Microsoft’s Visual Studio Code.
-                                      ;;  "bolt-launcher" ;; A third-party launcher for Jagex accounts for the popular online game RuneScape and Old School RuneScape.
+                                      "bolt-launcher" ;; A third-party launcher for Jagex accounts for the popular online game RuneScape and Old School RuneScape.
                                       "obs" ;; Open Broadcaster Software, a free and open-source software for video recording and live streaming.
                                       "obs-droidcam" ;; A plugin for OBS Studio that lets you use your phone as a camera source.
                                       ;;       "flatpak" ;; A system for building, distributing, and running sandboxed desktop applications on Linux.
