@@ -225,7 +225,7 @@
                                       "rofi" ;; An application launcher. For us it is used alongside hyperland.
                                       "wlogout" ;;
                                       "wallust" ;; A fast wallpaper color scheme generator. Can theme your system based on your current wallpaper.
-                                      "swww" ;; A Wayland wallpaper daemon that supports animated wallpapers, transitions, and per monitor wall papers. Not currently using, but should.
+                                      "awww" ;; A Wayland wallpaper daemon that supports animated wallpapers, transitions, and per monitor wall papers. Not currently using, but should.
                                       "hyprpaper" ;; A wallpaper manager (daemon included) for Hyprland (Wayland compositor) supports per monitor wall papers and IPC control. Currently using. (They will not add animated wallpapers). Simplicity in mind.
                                       "ark" ;; KDE archive manager — handles zip, tar, rar, and other formats.
                                       "mousepad" ;; Lightweight text editor for Xfce — simple and fast.
