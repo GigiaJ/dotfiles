@@ -50,7 +50,6 @@
                               "tree"
                               "emacs-eaf-browser"
                               "swtpm"
-                              "ovmf"
                               )))
 
 
