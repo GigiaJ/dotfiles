@@ -77,6 +77,8 @@
                                       "nextcloud-client" ;; A self-host-able Cloud platform for files, communication, file-sharing, and collaboration. Super useful for syncing our home directory files like some would use OneDrive.
                                       "node" ;; Node.JS Interpreter and NPM
                                       ;;   "ollama" ;; A CLI tool to allow LLM (and other) model loading to provide to a front-end tool (or to use in the CLI)
+                                      "anki"
+                                      "bitwarden-desktop"
                                       "python-pyqt6-sip"
 
 "wf-recorder"
