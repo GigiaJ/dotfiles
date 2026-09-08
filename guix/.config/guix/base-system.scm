@@ -20,7 +20,7 @@
   #:use-module ((gnu services ssh) #:select (openssh-service-type openssh-configuration))
   #:use-module ((gnu services dbus) #:select (dbus-root-service-type))
   #:use-module ((gnu services networking) #:select (network-manager-service-type network-manager-configuration))
-  #:use-module ((gnu services virtualization) #:select (libvirt-service-type libvirt-configuration))
+  #:use-module ((gnu services virtualization) #:select (libvirt-service-type libvirt-configuration virtlog-service-type))
 
   ;;; Third-party and non-free modules
 ;;  #:use-module ((gunit packages xdg-desktop-portal-hyprland-input-capture))
@@ -94,6 +94,7 @@
 	      ))
      (service bluetooth-service-type)
      (service kwallet-service-type)
+     (service virtlog-service-type)
      (service libvirt-service-type
       (libvirt-configuration
       (unix-sock-group "libvirt")))
