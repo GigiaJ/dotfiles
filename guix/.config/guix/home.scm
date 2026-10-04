@@ -81,9 +81,9 @@
                                       "bitwarden-desktop"
                                       "python-pyqt6-sip"
 
-"wf-recorder"
-"wl-clipboard"
-"xclip"
+                                      "wf-recorder"
+                                      "wl-clipboard"
+                                      "xclip"
 
                                       "python-pyqtwebengine"
                                       "python-sip"
