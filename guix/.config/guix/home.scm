@@ -80,6 +80,8 @@
 
                                       "helium"
                                       "kodi"
+                                      "jagex-launcher"
+
                                       "anki"
                                       "bitwarden-desktop"
                                       "python-pyqt6-sip"
