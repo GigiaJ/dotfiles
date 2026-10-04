@@ -35,6 +35,7 @@
                               ;;    "jupyter"                 ;; Interactive computing environment — runs notebooks with code, markdown, and visualizations. Somewhat similar to Org-mode in Emacs.
                               ;;    "python-jupytext"         ;; Syncs Jupyter notebooks with plain text formats like Markdown or Python scripts.
                               ;;   "python-jupyter-console"  ;; Terminal-based console for Jupyter kernels — lets you interact with Python and other languages.
+                              "pnpm"
                               "rsync"
                               "entr"
                               "kubectl"
