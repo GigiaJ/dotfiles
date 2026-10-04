@@ -51,6 +51,13 @@
           "12540f593092e9a177eb8a974a57bb4892327752"
           (openpgp-fingerprint
            "3FFA 7335 973E 0A49 47FC  0A8C 38D5 96BE 07D3 34AB"))))
-
+       (channel
+        (name 'pantherx)
+        (url "https://codeberg.org/gofranz/panther.git")
+        (introduction
+         (make-channel-introduction
+          "54b4056ac571611892c743b65f4c47dc298c49da"
+          (openpgp-fingerprint
+           "A36A D41E ECC7 A871 1003  5D24 524F EB1A 9D33 C9CB"))))
        %default-channels)
 
