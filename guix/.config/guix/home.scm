@@ -228,6 +228,7 @@
                                       "font-google-noto-serif-cjk" ;; Serif variant of Noto for Chinese, Japanese, and Korean scripts.
                                       "font-google-noto-sans-cjk" ;; Sans-serif variant of Noto for CJK scripts.
                                       "font-google-noto-emoji" ;; The emoji font from the Noto family, providing full-color emoji support.
+                                      "font-adobe-source-code-pro" ;; Used in Emacs
                                      ;; "font-nerd-fonts" ;; A collection of patched fonts with icons (Devicons, Font Awesome, etc.) for use in terminals and status bars.
                                       "rofi" ;; An application launcher. For us it is used alongside hyperland.
                                       "wlogout" ;;
@@ -258,10 +259,9 @@
                                       "pamixer"
                                       "breeze-gtk"
                                       "virt-manager"
-                                      "qemu" ;; 
+                                      "qemu" ;;
                                       "libvirt"
                                       "ovmf-x86-64" ;; Provides the needed files for UEFI boot for VMs
-                                      
                                       ;; Need to add gtk portal to cover what hyprland can't
                                       ))))
 
